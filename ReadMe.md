@@ -13,7 +13,7 @@
 6. The libraries used are random,itertools,collections and copy.
 
 
-#_Thank You_
+_Thank You_
 
                                - Raghav Agarwal
                                - 115078055
