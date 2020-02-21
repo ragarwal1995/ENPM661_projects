@@ -217,14 +217,16 @@ if inv_c % 2 == 0:
     # Creating a file nodePath to show the path created.
     file1 = open("nodePath.txt", "w")
     for i in solved:
-        file1.write(str(i).replace(',', '').replace('[', '').replace(']', '') + "\n")
+        tlist = list(zip(*i))
+        file1.write(str(tlist).replace('(','').replace(')','').replace(',', '').replace('[', '').replace(']', '') + "\n")
     file1.close()
     # Creating two more files to create Nodes and NodeInfo
     file2 = open("Nodes.txt", "w")
     file3 = open("NodesInfo.txt", "w")
     while solved_puzzle.queue:
         node = solved_puzzle.queue.popleft()
-        file2.write(str(node.puzzle.board).replace(',', '').replace('[', '').replace(']', '') + "\n")
+        tlist = list(zip(*node.puzzle.board))
+        file2.write(str(tlist).replace('(','').replace(')','').replace(',', '').replace('[', '').replace(']', '') + "\n")
         if node.parent == None:
             file3.write(str(node.index) + " 0\n")
         else:
